@@ -7,6 +7,7 @@ const Body = () => {
   const [buttons, setButtons] = useState([]);
   const [currentCategory, setCurrentCategory] = useState(null);
   const [currentCardData, setCurrentCardData] = useState(null);
+  const [active, setActive] = useState(0);
 
   // Fetch API response and store in state variable
   useEffect(() => {
@@ -42,12 +43,13 @@ const Body = () => {
   // Handle button click
   const handleClick = (e) => {
     setCurrentCategory(e.target.value);
+    setActive(buttons.indexOf(e.target.value));
   }
 
   return (
     <div>
       {buttons.map((button, index) => (
-        <Button key={index} name={button} onClick={handleClick} />
+        <Button key={index} name={button} onClick={handleClick} activeClass={active == index ? 'active' : ''} />
       ))}
       {
         currentCardData && currentCardData.map((item, index) => {

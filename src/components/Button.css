@@ -49,3 +49,7 @@
   background: rgba(0, 0, 0, 0.08);
   color: rgba(0, 0, 0, 0.3);
 }
+
+.category-button.active {
+  background-color: red;
+}
