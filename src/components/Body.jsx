@@ -30,10 +30,8 @@ const Body = () => {
 
   useEffect(() => {
     if (currentCategory) {
-      console.log(currentCategory);
       for ( const [key, value] of Object.entries(JSON.parse(data))) {
         if (key === currentCategory) {
-          console.log(key, value);
           setCurrentCardData(Object.entries(value));
         }
       }
@@ -43,7 +41,6 @@ const Body = () => {
 
   // Handle button click
   const handleClick = (e) => {
-    console.log(e.target.value);
     setCurrentCategory(e.target.value);
   }
 
